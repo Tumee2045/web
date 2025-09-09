@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-dmsans: 'DM Sans', sans-serif;
+    --font-grotesk: 'Space Grotesk', sans-serif;
+    --color-bg: #0a0a0a;
+    --color-text: #f0f0f0;
+  }
+
+  html {
+    font-family: var(--font-dmsans);
+    background: linear-gradient(to bottom, #0a0a0a, #0e0e0e);
+    color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .font-dmsans {
+    font-family: var(--font-dmsans);
+  }
+
+  .font-grotesk {
+    font-family: var(--font-grotesk);
+  }
+
+  .white-glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .blue-glassmorphism {
+    background: rgba(29, 78, 216, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a.active hr {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  a.active {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* index.css or globals.css */
+@keyframes scroll-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); } /* scroll through 20 cards in sets of 5 */
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 40s linear infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes scroll-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); } /* slides through 20 cards in groups of 5 */
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 40s linear infinite;
+}
